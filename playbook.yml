@@ -32,7 +32,6 @@
         content: |
           [client]
           user=root
-          password="@targ8et"
         dest: "/etc/.my.cnf"
 
     - name: Start MySQL Service
@@ -62,13 +61,6 @@
     - name: Create Application Database
       mysql_db:
         name: employee_db
-        state: present
-
-    - name: Create Database user
-      mysql_user:
-        name: db_user
-        password: Passw0rd
-        priv: '*.*:ALL'
         state: present
 
     - name: Copy source code
